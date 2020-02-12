@@ -371,3 +371,114 @@ var lastName = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName[0];
+
+
+// In JavaScript, String values are immutable, which 
+// means that they cannot be altered once created.
+// For example, the following code:
+
+// var myStr = "Bob";
+// myStr[0] = "J";
+
+// cannot change the value of myStr to "Job", because 
+// the contents of myStr cannot be altered. Note that 
+// this does not mean that myStr cannot be changed, just 
+// that the individual characters of a string literal cannot 
+// be changed. The only way to change myStr would be to assign 
+// it with a new string, like this:
+
+// var myStr = "Bob";
+// myStr = "Job";
+
+// Correct the assignment to myStr so it contains the string value 
+// of Hello World using the approach shown in the example above.
+
+// Setup
+var myStr = "Jello World";
+
+// Only change code below this line
+myStr[0] = "H"; // Fix Me
+myStr = "Hello World";
+
+
+// You can also use bracket notation to get the 
+// character at other positions within a string.
+// Remember that computers start counting at 0, 
+// so the first character is actually the zeroth character.
+// Let's try to set thirdLetterOfLastName to equal the 
+// third letter of the lastName variable using bracket notation.
+
+// Example
+// var firstName = "Ada";
+// var secondLetterOfFirstName = firstName[1];
+
+// Setup
+var lastName = "Lovelace";
+// Only change code below this line.
+var thirdLetterOfLastName = lastName;
+var thirdLetterOfLastName = lastName[2];
+
+
+// In order to get the last letter of a string, 
+// you can subtract one from the string's length.
+// For example, if var firstName = "Charles", you 
+// can get the value of the last letter of the string by using firstName[firstName.length - 1].
+// Use bracket notation to find the last character in the lastName variable.
+
+// Example
+var firstName = "Ada";
+var lastLetterOfFirstName = firstName[firstName.length - 1];
+
+// Setup
+var lastName = "Lovelace";
+// Only change code below this line.
+var lastLetterOfLastName = lastName;
+var lastLetterOfLastName = lastName[lastName.length - 1];
+
+
+// You can use the same principle we just used to retrieve 
+// the last character in a string to retrieve the Nth-to-last 
+// character. For example, you can get the value of the third-to-last letter of the 
+// var firstName = "Charles" string by using firstName[firstName.length - 3]
+// Use bracket notation to find the second-to-last character in the lastName string.
+// Example
+var firstName = "Ada";
+var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
+
+// Setup
+var lastName = "Lovelace";
+// Only change code below this line
+var secondToLastLetterOfLastName = lastName;
+var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+
+
+
+
+// We will now use our knowledge of strings to build a "Mad Libs" 
+// style word game we're calling "Word Blanks". You will create an 
+// (optionally humorous) "Fill in the Blanks" style sentence.
+// In a "Mad Libs" game, you are provided sentences with some 
+// missing words, like nouns, verbs, adjectives and adverbs. 
+// You then fill in the missing pieces with words of your choice 
+// in a way that the completed sentence makes sense.
+// Consider this sentence - "It was really ____, and we ____ ourselves ____". 
+// This sentence has three missing pieces- an adjective, a verb and an adverb, 
+// and we can add words of our choice to complete it. 
+// We can then assign the completed sentence to a variable as follows:
+// var sentence = "It was really " + "hot" + ", and we " + "laughed" + " ourselves " + "silly" + ".";
+// In this challenge, we provide you with a noun, a verb, an adjective 
+// and an adverb. You need to form a complete sentence using 
+// words of your choice, along with the words we provide.
+// You will need to use the string concatenation operator + to build a 
+// new string, using the provided variables: myNoun, myAdjective, myVerb, 
+// and myAdverb. You will then assign the formed string to the wordBlanks 
+// variable. You should not change the words assigned to the variables.
+// You will also need to account for spaces in your string, so that the 
+// final sentence has spaces between all the words. The result should be a complete sentence.
+var myNoun = "dog";
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
+
+var wordBlanks = ""; // Only change this line;
+var wordBlanks = "The " + myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + ".";
