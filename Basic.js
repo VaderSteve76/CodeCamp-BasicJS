@@ -310,3 +310,64 @@ myStr += "This is the second sentence.";
 // myStr with myName between the strings "My name is " and " and I am well!"
 var myName = "Steve";
 var myStr = "My name is" + myName + "and I am well";
+
+
+// Just as we can build a string over multiple lines out 
+// of string literals, we can also append variables to a 
+// string using the plus equals (+=) operator.
+// Set someAdjective and append it to myStr using the += operator.
+// Example
+// var anAdjective = "awesome!";
+// var ourStr = "freeCodeCamp is ";
+// ourStr += anAdjective;
+// Only change code below this line
+var someAdjective;
+var myStr = "Learning to code is ";
+
+var someAdjective = "fun";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+
+
+// You can find the length of a String value by writing
+// .length after the string variable or string literal.
+// "Alan Peter".length; For example, if we created a 
+// variable var firstName = "Charles", we could find out 
+// how long the string "Charles" is by using the firstName.length property.
+// Use the .length property to count the number of characters
+// in the lastName variable and assign it to lastNameLength.
+// Example
+// var firstNameLength = 0;
+// var firstName = "Ada";
+// firstNameLength = firstName.length;
+
+// Setup
+var lastNameLength = 0;
+var lastName = "Lovelace";
+
+// Only change code below this line.
+lastNameLength = lastName.length;
+
+
+// Bracket notation is a way to get a character at 
+// a specific index within a string.
+// Most modern programming languages, like 
+// JavaScript, don't start counting at 1 like 
+// humans do. They start at 0. This is referred to 
+// as Zero-based indexing.
+// For example, the character at index 0 in the word 
+// "Charles" is "C". So if var firstName = "Charles", you 
+// can get the value of the first letter of the string by using firstName[0].
+// Use bracket notation to find the first character in
+// the lastName variable and assign it to firstLetterOfLastName.
+// Example
+// var firstLetterOfFirstName = "";
+// var firstName = "Ada";
+// firstLetterOfFirstName = firstName[0];
+
+// Setup
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0];
