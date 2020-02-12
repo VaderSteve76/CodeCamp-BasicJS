@@ -198,3 +198,115 @@ c = c / 11;
 a /= 12;
 b /= 4;
 c /= 11;
+
+
+// var myName = "your name";
+// "your name" is called a string literal. 
+// It is a string because it is a series of 
+// zero or more characters enclosed in single or double quotes.
+// Create two new string variables: myFirstName and myLastName 
+// and assign them the values of your first and last name, respectively.
+// Example
+var firstName = "Alan";
+var lastName = "Turing";
+
+// Only change code below this line
+var myFirstName = "Steve";
+var myLastName = "Alverson";
+
+
+// When you are defining a string you must start and end with a single or double quote. 
+// What happens when you need a literal quote: " or ' inside of your string?
+// In JavaScript, you can escape a quote from considering it as an end of 
+// string quote by placing a backslash (\) in front of the quote.
+// var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
+// This signals to JavaScript that the following quote is not the end of 
+// the string, but should instead appear inside the string. So if you 
+// were to print this to the console, you would get:
+// Alan said, "Peter is learning JavaScript".
+// Use backslashes to assign a string to the myStr variable so 
+// that if you were to print it to the console, you would see:
+// I am a "double quoted" string inside "double quotes".
+var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+
+// goodStr = 'Jake asks Finn, "Hey, let\'s go on an adventure?"'; 
+// badStr = 'Finn responds, "Let's go!"'; // Throws an error
+// In the goodStr above, you can use both quotes safely by using 
+// the backslash \ as an escape character. Note
+// The backslash \ should not be confused with the 
+// forward slash /. They do not do the same thing.
+// Change the provided string to a string with single 
+// quotes at the beginning and end and no escape characters.
+// Right now, the <a> tag in the string uses double quotes 
+// everywhere. You will need to change the outer quotes to 
+// single quotes so you can remove the escape characters.
+var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+
+
+
+
+// Quotes are not the only characters that can be escaped inside a string. 
+// There are two reasons to use escaping characters:
+
+//     To allow you to use characters you may not otherwise be able to type out, such as a carriage return.
+//     To allow you to represent multiple quotes in a string without JavaScript misinterpreting what you mean.
+
+// We learned this in the previous challenge.
+
+// Code	Output
+// \'	single quote
+// \"	double quote
+// \\	backslash
+// \n	newline
+// \r	carriage return
+// \t	tab
+// \b	word boundary
+// \f	form feed
+
+// Note that the backslash itself must be escaped in order to display as a backslash.
+
+// Assign the following three lines of text into the single variable myStr using escape sequences.
+
+//     FirstLine
+//         \SecondLine
+//     ThirdLine
+
+// You will need to use escape sequences to insert special characters correctly. 
+// You will also need to follow the spacing as it looks above, 
+// with no spaces between escape sequences or words.
+
+// Here is the text with the escape sequences written out.
+
+// "FirstLinenewlinetabbackslashSecondLinenewlineThirdLine"
+var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+
+
+// In JavaScript, when the + operator is used with a String value, 
+// it is called the concatenation operator. You can build a new 
+// string out of other strings by concatenating them together.
+// Example: 'My name is Alan,' + ' I concatenate.'
+// Note Watch out for spaces. Concatenation does not add spaces 
+// between concatenated strings, so you'll need to add them yourself.
+// Build myStr from the strings "This is the start. " and "This is the end." using the + operator.
+var myStr = "This is the start. " + "This is the end.";
+
+// We can also use the += operator to concatenate a string onto the end 
+// of an existing string variable. This can be very helpful to break a 
+// long string over several lines.
+// Note Watch out for spaces. Concatenation does not add spaces between 
+// concatenated strings, so you'll need to add them yourself.
+// Build myStr over several lines by concatenating these two 
+// strings: "This is the first sentence. " and "This is the second sentence." 
+// using the += operator. Use the += operator similar to how it is shown in 
+// the editor. Start by assigning the first string to myStr, then add on the second string.
+var myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
+
+// Sometimes you will need to build a string, Mad Libs style. 
+// By using the concatenation operator (+), you can insert 
+// one or more variables into a string you're building.
+// Set myName to a string equal to your name and build 
+// myStr with myName between the strings "My name is " and " and I am well!"
+var myName = "Steve";
+var myStr = "My name is" + myName + "and I am well";
