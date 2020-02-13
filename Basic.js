@@ -482,3 +482,179 @@ var myAdverb = "quickly";
 
 var wordBlanks = ""; // Only change this line;
 var wordBlanks = "The " + myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + ".";
+
+
+// With JavaScript array variables, we can store 
+// several pieces of data in one place.
+// You start an array declaration with an opening 
+// square bracket, end it with a closing square bracket, 
+// and put a comma between each entry, like this:
+// var sandwich = ["peanut butter", "jelly", "bread"].
+// Modify the new array myArray so that it contains both 
+// a string and a number (in that order).
+// Example
+var ourArray = ["John", 23];
+
+// Only change code below this line.
+var myArray = [];
+var myArray = ["Steve", 43];
+
+
+// You can also nest arrays within other arrays, 
+// like this: [["Bulls", 23], ["White Sox", 45]]. 
+// This is also called a multi-dimensional array.
+// Create a nested array called myArray.
+// Example
+var ourArray = [["the universe", 42], ["everything", 101010]];
+
+// Only change code below this line.
+var myArray = [];
+var myArray = [["Steve", 43], ["Jen", 30]];
+
+
+// We can access the data inside arrays using indexes.
+// Array indexes are written in the same bracket notation 
+// that strings use, except that instead of specifying a 
+// character, they are specifying an entry in the array. 
+// Like strings, arrays use zero-based indexing, so the first 
+// element in an array has an index of 0.
+// Example
+// var array = [50,60,70];
+// array[0]; // equals 50
+// var data = array[1];  // equals 60
+// Example
+var ourArray = [50,60,70];
+var ourData = ourArray[0]; // equals 50
+
+// Setup
+var myArray = [50,60,70];
+// Only change code below this line.
+// Create a variable called myData and set it to 
+// equal the first value of myArray using bracket notation.
+var myData = myArray[0];
+
+
+// Unlike strings, the entries of arrays are 
+// mutable and can be changed freely.
+// Example
+// var ourArray = [50,40,30];
+// ourArray[0] = 15; // equals [15,40,30]
+// Note
+// There shouldn't be any spaces between the 
+// array name and the square brackets, like array [0]. 
+// Although JavaScript is able to process this correctly, 
+// this may confuse other programmers reading your code.
+// Modify the data stored at index 0 of myArray to a value of 45.
+// Example
+var ourArray = [18,64,99];
+ourArray[1] = 45; // ourArray now equals [18,45,99].
+
+// Setup
+var myArray = [18,64,99];
+// Only change code below this line.
+myArray[0] = 45;
+
+
+// One way to think of a multi-dimensional array, 
+// is as an array of arrays. When you use brackets to 
+// access your array, the first set of brackets refers 
+// to the entries in the outer-most (the first level) array, 
+// and each additional pair of brackets refers to the next level of entries inside.
+// Example
+// var arr = [
+//   [1,2,3],
+//   [4,5,6],
+//   [7,8,9],
+//   [[10,11,12], 13, 14]
+// ];
+// arr[3]; // equals [[10,11,12], 13, 14]
+// arr[3][0]; // equals [10,11,12]
+// arr[3][0][1]; // equals 11
+// Note There shouldn't be any spaces between the array 
+// name and the square brackets, like array [0][0] and even
+// this array [0][0] is not allowed. Although JavaScript is 
+// able to process this correctly, this may confuse other programmers reading your code.
+// Using bracket notation select an element from myArray such that myData is equal to 8.
+// Setup
+var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+
+// Only change code below this line.
+var myData = myArray = [0][0];
+var myData = myArray[2][1];
+
+
+// An easy way to append data to the end of an array is via the push() function.
+// .push() takes one or more parameters and "pushes" them onto the end of the array.
+// var arr = [1,2,3];
+// arr.push(4);
+// // arr is now [1,2,3,4]
+// Push ["dog", 3] onto the end of the myArray variable.
+// Example
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.push(["happy", "joy"]);
+// ourArray now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
+// Setup
+var myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line.
+myArray.push(["dog", 3]);
+
+
+// Another way to change the data in an array is with the .pop() function.
+// .pop() is used to "pop" a value off of the end of an array. 
+// We can store this "popped off" value by assigning it to a variable. 
+// In other words, .pop() removes the last element from an array and returns that element.
+// Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
+// var threeArr = [1, 4, 6];
+// var oneDown = threeArr.pop();
+// console.log(oneDown); // Returns 6
+// console.log(threeArr); // Returns [1, 4]
+// Use the .pop() function to remove the last item from myArray, 
+// assigning the "popped off" value to removedFromMyArray.
+// Example
+var ourArray = [1,2,3];
+var removedFromOurArray = ourArray.pop();
+// removedFromOurArray now equals 3, and ourArray now equals [1,2]
+
+// Setup
+var myArray = [["John", 23], ["cat", 2]];
+
+// Only change code below this line.
+var removedFromMyArray = myArray.pop();
+
+
+// pop() always removes the last element of an array. 
+// What if you want to remove the first?
+// That's where .shift() comes in. It works just like .pop(), 
+// except it removes the first element instead of the last.
+// Use the .shift() function to remove the first item from myArray, 
+// assigning the "shifted off" value to removedFromMyArray.
+// Example
+var ourArray = ["Stimpson", "J", ["cat"]];
+var removedFromOurArray = ourArray.shift();
+// removedFromOurArray now equals "Stimpson" and ourArray now equals ["J", ["cat"]].
+// Setup
+var myArray = [["John", 23], ["dog", 3]];
+// Only change code below this line.
+var removedFromMyArray = myArray.shift();
+
+
+// Not only can you shift elements off of the beginning 
+// of an array, you can also unshift elements to the beginning 
+// of an array i.e. add elements in front of the array.
+// .unshift() works exactly like .push(), but instead of adding 
+// the element at the end of the array, unshift() adds the 
+// element at the beginning of the array.
+// Add ["Paul",35] to the beginning of the myArray variable using unshift().
+// Example
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.shift(); // ourArray now equals ["J", "cat"]
+ourArray.unshift("Happy");
+// ourArray now equals ["Happy", "J", "cat"]
+// Setup
+var myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+// Only change code below this line.
+myArray.unshift(["Paul", 35]);
+
+
