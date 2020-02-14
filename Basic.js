@@ -915,3 +915,39 @@ function processArg(num) {
 processed = processArg(7);
 
 
+// In Computer Science a queue is an abstract 
+// Data Structure where items are kept in order. 
+// New items can be added at the back of the queue 
+// and old items are taken off from the front of the queue.
+// Write a function nextInLine which takes an array (arr) 
+// and a number (item) as arguments. Add the number to the 
+// end of the array, then remove the first element of the array.
+// The nextInLine function should then return the element that was removed.
+function nextInLine(arr, item) {
+  // Your code here
+  arr.push(item);
+  var removed = arr.shift();
+  return removed;  // Change this line
+}
+// Test Setup
+var testArr = [1,2,3,4,5];
+// Display Code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6)); // Modify this line to test
+console.log("After: " + JSON.stringify(testArr));
+
+
+// Another data type is the Boolean. Booleans may only 
+// be one of two values: true or false. They are basically 
+// little on-off switches, where true is "on" and false is 
+// "off." These two states are mutually exclusive. Note
+// Boolean values are never written with quotes. The 
+// strings "true" and "false" are not Boolean and have 
+// no special meaning in JavaScript.
+// Modify the welcomeToBooleans function so that it returns 
+// true instead of false when the run button is clicked.
+function welcomeToBooleans() {
+  // Only change code below this line.
+  return true; // Change this line
+  // Only change code above this line.
+}
