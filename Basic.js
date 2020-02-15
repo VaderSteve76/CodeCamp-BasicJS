@@ -951,3 +951,229 @@ function welcomeToBooleans() {
   return true; // Change this line
   // Only change code above this line.
 }
+
+
+
+
+
+// If statements are used to make decisions in code. The keyword if 
+// tells JavaScript to execute the code in the curly braces under 
+// certain conditions, defined in the parentheses. These conditions 
+// are known as Boolean conditions and they may only be true or false.
+// When the condition evaluates to true, the program executes the 
+// statement inside the curly braces. When the Boolean condition evaluates 
+// to false, the statement inside the curly braces will not execute.
+// Pseudocode
+//     if (condition is true) {
+//       statement is executed
+//     }
+// Example
+// function test (myCondition) {
+//   if (myCondition) {
+//      return "It was true";
+//   }
+//   return "It was false";
+// }
+// test(true);  // returns "It was true"
+// test(false); // returns "It was false"
+// When test is called with a value of true, the if statement 
+// evaluates myCondition to see if it is true or not. Since it 
+// is true, the function returns "It was true". When we call test 
+// with a value of false, myCondition is not true and the statement 
+// in the curly braces is not executed and the function returns "It was false".
+// Create an if statement inside the function to return "Yes, that was true" 
+// if the parameter wasThatTrue is true and return "No, that was false" otherwise.
+// Example
+function ourTrueOrFalse(isItTrue) {
+  if(isItTrue) {
+    return "Yes, it's true";
+  }
+  return "No, it's false";
+}
+
+// Setup
+function trueOrFalse(wasThatTrue) {
+  if(wasThatTrue) {
+    return "Yes, that was true";
+  }
+  return "No, that was false";
+}
+// Change this value to test
+trueOrFalse(true);
+
+
+// There are many comparison operators in JavaScript. 
+// All of these operators return a boolean true or false value.
+// The most basic operator is the equality operator ==. The 
+// equality operator compares two values and returns true if 
+// they're equivalent or false if they are not. Note that equality 
+// is different from assignment (=), which assigns the value at the 
+// right of the operator to a variable in the left.
+
+// function equalityTest(myVal) {
+//   if(myVal == 10) {
+//     return "Equal";
+//   }
+//   return "Not Equal";
+// }
+
+// If myVal is equal to 10, the equality operator returns true, 
+// so the code in the curly braces will execute, and the function 
+// will return "Equal". Otherwise, the function will return "Not Equal". 
+// In order for JavaScript to compare two different data types 
+// (for example, numbers and strings), it must convert one type to another. 
+// This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
+
+// 1   ==  1   // true
+// 1   ==  2   // false
+// 1   == '1'  // true
+// "3" ==  3   // true
+
+// Add the equality operator to the indicated line so that the 
+// function will return "Equal" when val is equivalent to 12.
+// Setup
+function testEqual(val) {
+  if(val == 12) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+// Change this value to test
+testEqual(10);
+
+
+// Strict equality (===) is the counterpart to the equality 
+// operator (==). However, unlike the equality operator, which 
+// attempts to convert both values being compared to a common type, 
+// the strict equality operator does not perform a type conversion.
+
+// If the values being compared have different types, they are 
+// considered unequal, and the strict equality operator will return false.
+
+// Examples
+// 3 ===  3   // true
+// 3 === '3'  // false
+
+// In the second example, 3 is a Number type and '3' is a String type.
+// Use the strict equality operator in the if statement so the function 
+// will return "Equal" when val is strictly equal to 7
+// Setup
+function testStrict(val) {
+  if (val === 7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+// Change this value to test]
+testStrict(7);
+
+
+// In the last two challenges, we learned about the equality 
+// operator (==) and the strict equality operator (===). 
+// Let's do a quick review and practice using these operators some more.
+// If the values being compared are not of the same type, the equality 
+// operator will perform a type conversion, and then evaluate the values. 
+// However, the strict equality operator will compare both the data type 
+// and value as-is, without converting one type to the other.
+
+// Examples
+// 3 == '3'  // returns true because JavaScript performs type conversion from string to number
+// 3 === '3' // returns false because the types are different and type conversion is not performed
+
+// Note In JavaScript, you can determine the type of a 
+// variable or a value with the typeof operator, as follows:
+
+// typeof 3   // returns 'number'
+// typeof '3' // returns 'string'
+
+// The compareEquality function in the editor compares two 
+// values using the equality operator. Modify the function so 
+// that it returns "Equal" only when the values are strictly equal.
+// Setup
+function compareEquality(a, b) {
+  if (a === b) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+// Change this value to test
+compareEquality(10, "10");
+
+
+// The inequality operator (!=) is the opposite of the equality operator. 
+// It means "Not Equal" and returns false where equality would return true 
+// and vice versa. Like the equality operator, the inequality operator will 
+// convert data types of values while comparing.
+
+// Examples
+// 1 !=  2     // true
+// 1 != "1"    // false
+// 1 != '1'    // false
+// 1 != true   // false
+// 0 != false  // false
+
+// Add the inequality operator != in the if statement so that the 
+// function will return "Not Equal" when val is not equivalent to 99
+// Setup
+function testNotEqual(val) {
+  if (val != 99) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+// Change this value to test
+testNotEqual(99);
+
+
+// The strict inequality operator (!==) is the logical 
+// opposite of the strict equality operator. It means 
+// "Strictly Not Equal" and returns false where strict 
+// equality would return true and vice versa. Strict 
+// inequality will not convert data types.
+
+// Examples
+// 3 !==  3   // false
+// 3 !== '3'  // true
+// 4 !==  3   // true
+
+// Add the strict inequality operator to the if 
+// statement so the function will return "Not Equal" 
+// when val is not strictly equal to 17
+// Setup
+function testStrictNotEqual(val) {
+  if (val !== 17) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+// Change this value to test
+testStrictNotEqual(10);
+
+
+// The greater than operator (>) compares the values of two numbers. 
+// If the number to the left is greater than the number to the right, 
+// it returns true. Otherwise, it returns false.
+// Like the equality operator, greater than operator will convert 
+// data types of values while comparing.
+
+// Examples
+// 5   >  3   // true
+// 7   > '3'  // true
+// 2   >  3   // false
+// '1' >  9   // false
+
+// Add the greater than operator to the indicated 
+// lines so that the return statements make sense.
+function testGreaterThan(val) {
+  if (val > 100) {  // Change this line
+    return "Over 100";
+  }
+  if (val > 10) {  // Change this line
+    return "Over 10";
+  }
+  return "10 or Under";
+}
+// Change this value to test
+testGreaterThan(10);
+
+
