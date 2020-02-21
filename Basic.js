@@ -2092,3 +2092,107 @@ function phoneticLookup(val) {
 // Change this value to test
 phoneticLookup("charlie");
 
+
+// Sometimes it is useful to check if the property of a 
+// given object exists or not. We can use the .hasOwnProperty(propname) 
+// method of objects to determine if that object has the given property 
+// name. .hasOwnProperty() returns true or false if the property is found or not.
+
+// Example
+
+// var myObj = {
+//   top: "hat",
+//   bottom: "pants"
+// };
+// myObj.hasOwnProperty("top");    // true
+// myObj.hasOwnProperty("middle"); // false
+
+// Modify the function checkObj to test myObj for checkProp. 
+// If the property is found, return that property's value. 
+// If not, return "Not Found".
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+  // Your Code Here
+  if (myObj.hasOwnProperty(checkProp) == true) {
+    return myObj[checkProp];
+  } else {
+    return "Not Found";
+  }
+  return "Change Me!";
+}
+// Test your code by modifying these values
+checkObj("gift");
+
+
+// Sometimes you may want to store data in a flexible Data Structure. 
+// A JavaScript object is one way to handle flexible data. They allow 
+// for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
+
+// Here's an example of a complex data structure:
+
+// var ourMusic = [
+//   {
+//     "artist": "Daft Punk",
+//     "title": "Homework",
+//     "release_year": 1997,
+//     "formats": [ 
+//       "CD", 
+//       "Cassette", 
+//       "LP"
+//     ],
+//     "gold": true
+//   }
+// ];
+
+// This is an array which contains one object inside. 
+// The object has various pieces of metadata about an album. 
+// It also has a nested "formats" array. If you want to add 
+// more album records, you can do this by adding records to 
+// the top level array. Objects hold data in a property, which 
+// has a key-value format. In the example above, "artist": "Daft Punk" 
+// is a property that has a key of "artist" and a value of "Daft Punk". 
+// JavaScript Object Notation or JSON is a related data interchange format used to store data.
+
+// {
+//   "artist": "Daft Punk",
+//   "title": "Homework",
+//   "release_year": 1997,
+//   "formats": [ 
+//     "CD",
+//     "Cassette",
+//     "LP"
+//   ],
+//   "gold": true
+// }
+
+// Note
+// You will need to place a comma after every object 
+// in the array, unless it is the last object in the array.
+// Add a new album to the myMusic array. Add artist and title 
+// strings, release_year number, and a formats array of strings.
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },
+  // Add record here
+  {
+    artist: "Deep Purple",
+    title: "Smoke on the water",
+    release_year: 1976,
+    formats: ["CD", "8T", "LP"]
+  }
+];
