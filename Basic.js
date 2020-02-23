@@ -2438,3 +2438,93 @@ for (var i = 1; i < 10; i += 2) {
 }
 
 
+// A for loop can also count backwards, so long 
+// as we can define the right conditions.
+// In order to count backwards by twos, we'll need to 
+// change our initialization, condition, and final-expression.
+// We'll start at i = 10 and loop while i > 0. We'll 
+// decrement i by 2 each loop with i -= 2.
+
+// var ourArray = [];
+// for (var i=10; i > 0; i-=2) {
+//   ourArray.push(i);
+// }
+
+// ourArray will now contain [10,8,6,4,2]. Let's 
+// change our initialization and final-expression so 
+// we can count backward by twos by odd numbers.
+// Push the odd numbers from 9 through 1 to myArray using a for loop.
+// Example
+var ourArray = [];
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+// Setup
+var myArray = [];
+// Only change code below this line.
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+
+
+// A common task in JavaScript is to iterate through the contents 
+// of an array. One way to do that is with a for loop. This code 
+// will output each element of the array arr to the console:
+
+// var arr = [10, 9, 8, 7, 6];
+// for (var i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+// Remember that arrays have zero-based indexing, which means 
+// the last index of the array is length - 1. Our condition for 
+// this loop is i < arr.length, which stops the loop when i is 
+// equal to length. In this case the last iteration is i === 4 
+// i.e. when i becomes equal to arr.length and outputs 6 to the console.
+// Declare and initialize a variable total to 0. Use a for loop to 
+// add the value of each element of the myArr array to total.
+// Example
+var ourArr = [ 9, 10, 11, 12];
+var ourTotal = 0;
+for (var i = 0; i < ourArr.length; i++) {
+  ourTotal += ourArr[i];
+}
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+// Only change code below this line
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+
+// If you have a multi-dimensional array, you can use the 
+// same logic as the prior waypoint to loop through both 
+// the array and any sub-arrays. Here is an example:
+
+// var arr = [
+//   [1,2], [3,4], [5,6]
+// ];
+// for (var i=0; i < arr.length; i++) {
+//   for (var j=0; j < arr[i].length; j++) {
+//     console.log(arr[i][j]);
+//   }
+// }
+
+// This outputs each sub-element in arr one at a time. Note 
+// that for the inner loop, we are checking the .length 
+// of arr[i], since arr[i] is itself an array.
+// Modify function multiplyAll so that it multiplies the 
+// product variable by each number in the sub-arrays of arr
+function multiplyAll(arr) {
+  var product = 1;
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+      product = product * arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+// Modify values below to test your code
+multiplyAll([[1,2],[3,4],[5,6,7]]);
