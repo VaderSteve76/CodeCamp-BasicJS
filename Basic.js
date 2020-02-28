@@ -3200,3 +3200,63 @@ const magic = () => {
   "use strict";
   return new Date();
 };
+
+
+// Just like a regular function, you can pass 
+// arguments into an arrow function.
+// // doubles input value and returns it
+// const doubler = (item) => item * 2;
+// If an arrow function has a single argument, the 
+// parentheses enclosing the argument may be omitted.
+// // the same function, without the argument parentheses
+// const doubler = item => item * 2;
+// It is possible to pass more than one argument into an arrow function.
+// // multiplies the first input value by the second and returns it
+// const multiplier = (item, multi) => item * multi;
+// Rewrite the myConcat function which appends contents of arr2 to 
+// arr1 so that the function uses arrow function syntax.
+const myConcat = (arr1, arr2) => {
+  "use strict";
+  return arr1.concat(arr2);
+};
+// test your code
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+// In order to help us create more flexible functions, 
+// ES6 introduces default parameters for functions.
+// Check out this code:
+// const greeting = (name = "Anonymous") => "Hello " + name;
+// console.log(greeting("John")); // Hello John
+// console.log(greeting()); // Hello Anonymous
+// The default parameter kicks in when the argument is not specified 
+// (it is undefined). As you can see in the example above, the 
+// parameter name will receive its default value "Anonymous" when you 
+// do not provide a value for the parameter. You can add default 
+// values for as many parameters as you want. Modify the function increment 
+// by adding default parameters so that it will add 1 to number if value is not specified.
+const increment = (number, value = 1) => number + value;
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
+
+
+// In order to help us create more flexible functions, ES6 introduces 
+// the rest parameter for function parameters. With the rest parameter, 
+// you can create functions that take a variable number of arguments. 
+// These arguments are stored in an array that can be accessed 
+// later from inside the function. Check out this code:
+
+// function howMany(...args) {
+//   return "You have passed " + args.length + " arguments.";
+// }
+// console.log(howMany(0, 1, 2)); 
+// console.log(howMany("string", null, [1, 2, 3], { })); 
+
+// The rest parameter eliminates the need to check the args array and 
+// allows us to apply map(), filter() and reduce() on the parameters array.
+// Modify the function sum using the rest parameter in such a way that 
+// the function sum is able to take any number of arguments and return their sum.
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3)); // 6
