@@ -3045,3 +3045,82 @@ function checkScope() {
   return i;
 }
 checkScope();
+
+
+// The keyword let is not the only new way to declare variables. 
+// In ES6, you can also declare variables using the const keyword.
+// const has all the awesome features that let has, with the added 
+// bonus that variables declared using const are read-only. They are 
+// a constant value, which means that once a variable is 
+// assigned with const, it cannot be reassigned.
+
+// "use strict";
+// const FAV_PET = "Cats";
+// FAV_PET = "Dogs"; // returns error
+
+// As you can see, trying to reassign a variable declared with 
+// const will throw an error. You should always name variables 
+// you don't want to reassign using the const keyword. This helps 
+// when you accidentally attempt to reassign a variable that is 
+// meant to stay constant. A common practice when naming constants 
+// is to use all uppercase letters, with words separated by an underscore.
+// Note: It is common for developers to use uppercase variable identifiers 
+// for immutable values and lowercase or camelCase for mutable values 
+// (objects and arrays). In a later challenge you will see an example of 
+// a lowercase variable identifier being used for an array.
+// Change the code so that all variables are declared using let or const. 
+// Use let when you want the variable to change, and const when you want 
+// the variable to remain constant. Also, rename variables declared with 
+// const to conform to common practices, meaning constants should be in all caps.
+// Passed
+// var should not exist in your code.
+// Passed
+// SENTENCE should be a constant variable declared with const.
+// Passed
+// i should be declared with let.
+// Passed
+// console.log should be changed to print the SENTENCE variable.
+function printManyTimes(str) {
+  "use strict";
+  // change code below this line
+  const SENTENCE = str + " is cool!";
+  for (let i = 0; i < str.length; i+=2) {
+    console.log(SENTENCE);
+  }
+  // change code above this line
+}
+printManyTimes("freeCodeCamp");
+
+
+// The const declaration has many use cases in modern JavaScript.
+// Some developers prefer to assign all their variables using const 
+// by default, unless they know they will need to reassign the value. 
+// Only in that case, they use let. However, it is important to understand 
+// that objects (including arrays and functions) assigned to a variable 
+// using const are still mutable. Using the const declaration only 
+// prevents reassignment of the variable identifier.
+
+// "use strict";
+// const s = [5, 6, 7];
+// s = [1, 2, 3]; // throws error, trying to assign a const
+// s[2] = 45; // works just as it would with an array declared with var or let
+// console.log(s); // returns [5, 6, 45]
+
+// As you can see, you can mutate the object [5, 6, 7] itself and the 
+// variable s will still point to the altered array [5, 6, 45]. Like 
+// all arrays, the array elements in s are mutable, but because const 
+// was used, you cannot use the variable identifier s to point to a 
+// different array using the assignment operator.
+// An array is declared as const s = [5, 7, 2]. Change the array to 
+// [2, 5, 7] using various element assignment.
+const s = [5, 7, 2];
+function editInPlace() {
+  'use strict';
+  // change code below this line
+  // s = [2, 5, 7]; <- this is invalid
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+  // change code above this line
+}
+editInPlace();
