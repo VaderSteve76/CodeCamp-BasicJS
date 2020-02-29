@@ -3318,3 +3318,64 @@ const { today, tomorrow } = HIGH_TEMPERATURES;
 console.log(yesterday) // should be not defined
 console.log(today); // should be 77
 console.log(tomorrow); // should be 80
+
+
+// Destructuring allows you to assign a new variable name when extracting values. You 
+// can do this by putting the new name after a colon when assigning the value.
+// Using the same object from the last example:
+// const user = { name: 'John Doe', age: 34 };
+// Here's how you can give new variable names in the assignment:
+// const { name: userName, age: userAge } = user;
+// // userName = 'John Doe', userAge = 34
+// You may read it as "get the value of user.name and assign it 
+// to a new variable named userName" and so on.
+// Replace the two assignments with an equivalent destructuring 
+// assignment. It should still assign the variables highToday and 
+// highTomorrow the values of today and tomorrow from the HIGH_TEMPERATURES object.
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+// change code below this line
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+// change code above this line
+console.log(yesterday) // should be not defined
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
+
+
+// You can use the same principles from the previous two 
+// lessons to destructure values from nested objects.
+// Using an object similar to previous examples:
+
+// const user = {
+//   johnDoe: { 
+//     age: 34,
+//     email: 'johnDoe@freeCodeCamp.com'
+//   }
+// };
+
+// Here's how to extract the values of object properties and 
+// assign them to variables with the same name:
+
+// const { johnDoe: { age, email }} = user;
+
+// And here's how you can assign an object properties' 
+// values to variables with different names:
+
+// const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+// Replace the two assignments with an equivalent destructuring 
+// assignment. It should still assign the variables lowToday and 
+// highToday the values of today.low and today.high from the LOCAL_FORECAST object.
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+// change code below this line
+  const { today: { low: lowToday, high: highToday } } = LOCAL_FORECAST;
+// change code above this line
+console.log(lowToday); // should be 64
+console.log(highToday); // should be 77
