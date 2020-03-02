@@ -547,3 +547,112 @@ const stats = {
 const half = ({ max, min }) => (max + min) / 2.0;
 console.log(stats); // should be object
 console.log(half(stats)); // should be 28.015
+
+
+// A new feature of ES6 is the template literal. This is a special 
+// type of string that makes creating complex strings easier.
+// Template literals allow you to create multi-line strings and to 
+// use string interpolation features to create strings.
+
+// Consider the code below:
+
+// const person = {
+//   name: "Zodiac Hasbro",
+//   age: 56
+// };
+
+// // Template literal with multi-line and string interpolation
+// const greeting = `Hello, my name is ${person.name}!
+// I am ${person.age} years old.`;
+
+// console.log(greeting); // prints
+// // Hello, my name is Zodiac Hasbro!
+// // I am 56 years old.
+
+// A lot of things happened there. Firstly, the example uses backticks (`),
+// not quotes (' or "), to wrap the string. Secondly, notice that the string 
+// is multi-line, both in the code and the output. This saves inserting \n 
+// within strings. The ${variable} syntax used above is a placeholder. Basically, 
+// you won't have to use concatenation with the + operator anymore. To add 
+// variables to strings, you just drop the variable in a template string and 
+// wrap it with ${ and }. Similarly, you can include other expressions in your 
+// string literal, for example ${a + b}. This new way of creating strings gives 
+// you more flexibility to create robust strings. Use template literal syntax with 
+// backticks to display each entry of the result object's failure array. Each entry 
+// should be wrapped inside an li element with the class attribute text-warning, 
+// and listed within the resultDisplayArray. Use an iterator method 
+// (any kind of loop) to get the desired output.
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  const resultDisplayArray = arr.map(item => `<li class="text-warning">${item}</li>`);
+  return resultDisplayArray;
+}
+const resultDisplayArray = makeList(result.failure);
+
+
+// ES6 adds some nice support for easily defining object literals.
+
+// Consider the following code:
+
+// const getMousePosition = (x, y) => ({
+//   x: x,
+//   y: y
+// });
+
+// getMousePosition is a simple function that returns an object 
+// containing two properties. ES6 provides the syntactic sugar to 
+// eliminate the redundancy of having to write x: x. You can simply 
+// write x once, and it will be converted tox: x (or something equivalent) 
+// under the hood. Here is the same function from above rewritten to use this new syntax:
+
+// const getMousePosition = (x, y) => ({ x, y });
+
+// Use object property shorthand with object literals to create 
+// and return an object with name, age and gender properties.
+const createPerson = (name, age, gender) => {
+  "use strict";
+  return {
+    name,
+    age,
+    gender
+  };
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male"));
+
+
+// When defining functions within objects in ES5, we 
+// have to use the keyword function as follows:
+
+// const person = {
+//   name: "Taylor",
+//   sayHello: function() {
+//     return `Hello! My name is ${this.name}.`;
+//   }
+// };
+
+// With ES6, You can remove the function keyword and colon 
+// altogether when defining functions in objects. 
+// Here's an example of this syntax:
+
+// const person = {
+//   name: "Taylor",
+//   sayHello() {
+//     return `Hello! My name is ${this.name}.`;
+//   }
+// };
+
+// Refactor the function setGear inside the object 
+// bicycle to use the shorthand syntax described above.
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
