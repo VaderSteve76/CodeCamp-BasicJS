@@ -57,3 +57,76 @@ let result = waldoRegex.test(waldoIsHiding);
 let petString = "James has a pet cat.";
 let petRegex = /dog|cat|bird|fish/;
 let result = petRegex.test(petString);
+
+
+// Up until now, you've looked at regexes to do literal matches of strings. 
+// But sometimes, you might want to also match case differences. Case 
+// (or sometimes letter case) is the difference between uppercase letters and 
+// lowercase letters. Examples of uppercase are "A", "B", and "C". Examples 
+// of lowercase are "a", "b", and "c". You can match both cases using what is 
+// called a flag. There are other flags but here you'll focus on the flag that 
+// ignores case - the i flag. You can use it by appending it to the regex. An 
+// example of using this flag is /ignorecase/i. This regex can match the strings 
+// "ignorecase", "igNoreCase", and "IgnoreCase".
+// Write a regex fccRegex to match "freeCodeCamp", no matter its case. Your regex 
+// should not match any abbreviations or variations with spaces.
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i;
+let result = fccRegex.test(myString);
+
+
+// So far, you have only been checking if a pattern exists or not within a string. 
+// You can also extract the actual matches you found with the .match() method.
+// To use the .match() method, apply the method on a string and pass in the regex 
+// inside the parentheses. Here's an example:
+
+// "Hello, World!".match(/Hello/);
+// // Returns ["Hello"]
+// let ourStr = "Regular expressions";
+// let ourRegex = /expressions/;
+// ourStr.match(ourRegex);
+// // Returns ["expressions"]
+// Apply the .match() method to extract the word coding.
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/;
+let result = extractStr.match(codingRegex);
+
+
+// So far, you have only been able to extract or search a pattern once.
+// let testStr = "Repeat, Repeat, Repeat";
+// let ourRegex = /Repeat/;
+// testStr.match(ourRegex);
+// // Returns ["Repeat"]
+// To search or extract a pattern more than once, you can use the g flag.
+// let repeatRegex = /Repeat/g;
+// testStr.match(repeatRegex);
+// // Returns ["Repeat", "Repeat", "Repeat"]
+
+// Using the regex starRegex, find and extract both 
+// "Twinkle" words from the string twinkleStar.
+// Note
+// You can have multiple flags on your regex like /search/gi
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
+
+
+// Sometimes you won't (or don't need to) know the exact characters 
+// in your patterns. Thinking of all words that match, say, a misspelling 
+// would take a long time. Luckily, you can save time using the wildcard character: .
+// The wildcard character . will match any one character. The wildcard is 
+// also called dot and period. You can use the wildcard character just like 
+// any other character in the regex. For example, if you wanted to match "hug", 
+// "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
+
+// let humStr = "I'll hum a song";
+// let hugStr = "Bear hug";
+// let huRegex = /hu./;
+// huRegex.test(humStr); // Returns true
+// huRegex.test(hugStr); // Returns true
+
+// Complete the regex unRegex so that it matches the strings "run", "sun", 
+// "fun", "pun", "nun", and "bun". Your regex should use the wildcard character.
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);
