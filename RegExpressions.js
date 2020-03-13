@@ -422,3 +422,60 @@ let noNumRegex = /\D/g;
 let result = movieName.match(noNumRegex).length;
 
 
+// Usernames are used everywhere on the internet. They are what 
+// give users a unique identity on their favorite sites.
+// You need to check all the usernames in a database. Here are 
+// some simple rules that users have to follow when creating their username.
+
+// 1) Usernames can only use alpha-numeric characters.
+
+// 2) The only numbers in the username have to be at the end. There 
+// can be zero or more of them at the end. Username cannot start with the number.
+
+// 3) Username letters can be lowercase and uppercase.
+
+// 4) Usernames have to be at least two characters long. A two-character 
+// username can only use alphabet letters as characters.
+
+// Change the regex userCheck to fit the constraints listed above.
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z]([0-9][0-9]+|[a-z]+\d*)$/i;
+let result = userCheck.test(username);
+
+
+// The challenges so far have covered matching letters of the 
+// alphabet and numbers. You can also match the whitespace or 
+// spaces between letters. You can search for whitespace using 
+// \s, which is a lowercase s. This pattern not only matches 
+// whitespace, but also carriage return, tab, form feed, and 
+// new line characters. You can think of it as similar to the 
+// character class [ \r\t\f\n\v].
+
+// let whiteSpace = "Whitespace. Whitespace everywhere!"
+// let spaceRegex = /\s/g;
+// whiteSpace.match(spaceRegex);
+// // Returns [" ", " "]
+
+// Change the regex countWhiteSpace to look for multiple 
+// whitespace characters in a string.
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);
+
+
+// You learned about searching for whitespace using \s, with a 
+// lowercase s. You can also search for everything except whitespace.
+// Search for non-whitespace using \S, which is an uppercase s. This 
+// pattern will not match whitespace, carriage return, tab, form 
+// feed, and new line characters. You can think of it being similar 
+// to the character class [^ \r\t\f\n\v].
+
+// let whiteSpace = "Whitespace. Whitespace everywhere!"
+// let nonSpaceRegex = /\S/g;
+// whiteSpace.match(nonSpaceRegex).length; // Returns 32
+
+// Change the regex countNonWhiteSpace to look for multiple 
+// non-whitespace characters in a string.
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
