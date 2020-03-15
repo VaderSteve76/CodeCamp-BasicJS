@@ -548,3 +548,84 @@ let result = haRegex.test(haStr);
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/;
 let result = timRegex.test(timStr);
+
+
+// Sometimes the patterns you want to search for may have parts 
+// of it that may or may not exist. However, it may be important 
+// to check for them nonetheless. You can specify the possible 
+// existence of an element with a question mark, ?. This checks 
+// for zero or one of the preceding element. You can think of 
+// this symbol as saying the previous element is optional.
+// For example, there are slight differences in American and 
+// British English and you can use the question mark to match 
+// both spellings.
+
+// let american = "color";
+// let british = "colour";
+// let rainbowRegex= /colou?r/;
+// rainbowRegex.test(american); // Returns true
+// rainbowRegex.test(british); // Returns true
+
+// Change the regex favRegex to match both the American English 
+// (favorite) and the British English (favourite) version of the word.
+let favWord = "favorite";
+let favRegex = /favou?rite/;
+let result = favRegex.test(favWord);
+
+
+// Lookaheads are patterns that tell JavaScript to look-ahead in 
+// your string to check for patterns further along. This can be 
+// useful when you want to search for multiple patterns over the same string.
+// There are two kinds of lookaheads: positive lookahead and negative lookahead.
+// A positive lookahead will look to make sure the element in the 
+// search pattern is there, but won't actually match it. A positive 
+// lookahead is used as (?=...) where the ... is the required part 
+// that is not matched. On the other hand, a negative lookahead will 
+// look to make sure the element in the search pattern is not there. 
+// A negative lookahead is used as (?!...) where the ... is the pattern 
+// that you do not want to be there. The rest of the pattern is returned 
+// if the negative lookahead part is not present.
+// Lookaheads are a bit confusing but some examples will help.
+
+// let quit = "qu";
+// let noquit = "qt";
+// let quRegex= /q(?=u)/;
+// let qRegex = /q(?!u)/;
+// quit.match(quRegex); // Returns ["q"]
+// noquit.match(qRegex); // Returns ["q"]
+
+// A more practical use of lookaheads is to check two or more patterns 
+// in one string. Here is a (naively) simple password checker that looks 
+// for between 3 and 6 characters and at least one number:
+
+// let password = "abc123";
+// let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+// checkPass.test(password); // Returns true
+
+// Use lookaheads in the pwRegex to match passwords that are greater 
+// than 5 characters long, do not begin with numbers, and have two consecutive digits.
+let sampleWord = "astronaut";
+var pwRegex =  /^\D(?=\w{5})(?=\w*\d{2})/;
+let result = pwRegex.test(sampleWord);
+
+
+// Sometimes we want to check for groups of characters using a Regular 
+// Expression and to achieve that we use parentheses ().
+// If you want to find either Penguin or Pumpkin in a string, you can use 
+// the following Regular Expression: /P(engu|umpk)in/g
+// Then check whether the desired string groups are in the test 
+// string by using the test() method.
+
+// let testStr = "Pumpkin";
+// let testRegex = /P(engu|umpk)in/;
+// testRegex.test(testStr);
+// // Returns true
+
+// Fix the regex so that it checks for the names of Franklin Roosevelt 
+// or Eleanor Roosevelt in a case sensitive manner and it should make 
+// concessions for middle names. Then fix the code so that the regex that 
+// you have created is checked against myString and either true or false 
+// is returned depending on whether the regex matches.
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Franklin|Eleanor).*Roosevelt/;
+let result = myRegex.test(myString);
